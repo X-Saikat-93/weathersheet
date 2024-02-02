@@ -4,7 +4,7 @@ Weathersheet is a sophisticated weather application designed to deliver comprehe
 
 ## 🖼️ Preview
 
-![Weathersheet](./src/asset/WeatherSheet-Readme.jpg)
+![Weathersheet](./src/asset/Khatra-weather.png)
 
 ## ✨ Features
 

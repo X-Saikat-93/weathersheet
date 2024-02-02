@@ -13,6 +13,10 @@ import Forecast from "./Components/ForeCast";
 
 import axios from "axios";
 
+/**
+ * Main App component for the weather application.
+ * @component
+ */
 function App() {
   const API_KEY = import.meta.env.VITE_REACT_APP_API_KEY;
   const [searchTerm, setSearchTerm] = useState("");
@@ -63,21 +67,20 @@ function App() {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
 
- const submitHandler = (e) => {
-   e.preventDefault();
+  const submitHandler = (e) => {
+    e.preventDefault();
 
-   // Trim whitespace from the search term and check if it's blank
-   const trimmedSearchTerm = searchTerm.trim();
-   if (trimmedSearchTerm === "") {
-     // Display an alert for empty search
-     window.alert("Please enter a valid location");
-     return;
-   }
+    // Trim whitespace from the search term and check if it's blank
+    const trimmedSearchTerm = searchTerm.trim();
+    if (trimmedSearchTerm === "") {
+      // Display an alert for empty search
+      window.alert("Please enter a valid location");
+      return;
+    }
 
-   // Proceed with fetching weather data
-   getWeather(trimmedSearchTerm);
- };
-
+    // Proceed with fetching weather data
+    getWeather(trimmedSearchTerm);
+  };
 
   const getWeather = async (location) => {
     setLoading(true);
@@ -125,7 +128,6 @@ function App() {
     const { latitude, longitude } = location.coords;
     getWeather([latitude, longitude]);
   };
-
 
   return (
     <div className='container'>
@@ -248,9 +250,7 @@ function App() {
                 <>
                   <DetailsCard
                     weather_icon={weatherIcon}
-                        data={weatherData}
-                        
-                
+                    data={weatherData}
                     isFahrenheitMode={isFahrenheitMode}
                     degreeSymbol={degreeSymbol}
                   />
