@@ -1,4 +1,4 @@
-
+/* Styles for the list of forecast items */
 .forecast-list {
   list-style: none;
   padding: 0;
@@ -8,6 +8,7 @@
   margin-bottom: 15px;
 }
 
+/* Styles for individual forecast items */
 .forecast-item {
   box-sizing: border-box;
   width: calc(100% - 20px); /* Adjusted width for better spacing */
@@ -20,6 +21,7 @@
   justify-content: center;
 }
 
+/* Styles for the forecast card container */
 .forecast-card {
   padding: 15px;
   box-sizing: border-box;
@@ -30,6 +32,7 @@
   margin-bottom: 15px;
 }
 
+/* Styles for the forecast title */
 .forecast-title {
   color: var(--subHeadingColor);
   text-align: center;
@@ -37,6 +40,7 @@
   margin-bottom: 15px;
 }
 
+/* Styles for forecast temperature */
 .forecast-temp {
   font-size: 1.5rem;
   font-weight: bold;
@@ -46,6 +50,7 @@
   padding-top: 1rem;
 }
 
+/* Styles for the container holding forecast main information */
 .forecast-main {
   display: flex;
   align-items: center;
@@ -53,11 +58,13 @@
   margin-bottom: 10px;
 }
 
+/* Styles for the weather icon inside the forecast main container */
 .forecast-main img {
   width: 40%;
   max-width: 80px; /* Limit the maximum width of the weather icon */
 }
 
+/* Styles for the overall background of the forecast section */
 .forecast-background {
   display: flex;
   flex-direction: column;
@@ -69,6 +76,7 @@
   margin: 1rem;
 }
 
+/* Styles for the forecast description */
 .forecast-description {
   text-transform: uppercase;
   text-align: center;
@@ -78,41 +86,53 @@
   margin-bottom: 10px;
 }
 
+/* Styles for the forecast date */
 .forecast-date {
   border-bottom: 1px solid var(--hrColor);
   margin-bottom: 10px;
   text-align: center;
 }
 
+/* Media query for larger screens (min-width: 768px) */
 @media only screen and (min-width: 768px) {
+  /* Adjusted styles for forecast list on larger screens */
   .forecast-list {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
 
+  /* Adjusted styles for individual forecast items on larger screens */
   .forecast-item {
     width: 48%;
     margin: 10px 3px; /* Adjusted margin for better spacing */
     padding: 2px;
   }
 
+  /* Adjusted styles for the forecast title on larger screens */
   .forecast-title {
     font-size: 1.2rem;
   }
-.forecast-main{
-  margin-left: 2px;
-  padding: 3px;
-}
+
+  /* Additional styles for forecast main information on larger screens */
+  .forecast-main {
+    margin-left: 2px;
+    padding: 3px;
+  }
+
+  /* Additional styles for forecast temperature on larger screens */
   .forecast-temp {
     font-size: 1.2rem;
     padding-top: 0.5rem;
   }
 
+  /* Adjusted styles for forecast description on larger screens */
   .forecast-description {
     font-size: 0.7rem;
   }
+
+  /* Additional styles for forecast date on larger screens */
   .forecast-date {
-    border-bottom: none
+    border-bottom: none;
   }
 }

@@ -1,64 +1,83 @@
+/* Style for the main container holding weather details */
 .details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: var(--cardColor);
-    box-shadow: var(--profileShadow);
-    border-radius: 1rem;
-    margin: 1rem;
-    
-  }
-  .details:hover {
-    transition: all 0.2s ease-out;
-    box-shadow: 0px 10px 17px 2px rgba(74, 68, 68, 0.25);
-    top: -4px;
-    border: 1px solid #cccccc;
-  }
-  .clouds {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-  }
-  .celsius {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--tempColor);
-  }
-  .cloud-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cloud-icon img {
-    width: 25%;
-  }
-  .des {
-    text-transform: uppercase;
-    color: var(--subHeadingColor);
-    font-size: 0.75rem;
-  }
-  .vl {
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid var(--hrColor);
-  }
-  .more-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.75rem;
-    padding-right: 2rem;
-  }
-  .more-info p {
-    font-weight: 600;
-  }
-  .more-info p > span {
-    color: var(--statsColor);
-    font-size: 1.1rem;
-    font-weight: 500;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cardColor); /* Use a variable for card background color */
+  box-shadow: var(--profileShadow); /* Use a variable for box shadow */
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+/* Hover effect for the details container */
+.details:hover {
+  transition: all 0.2s ease-out;
+  box-shadow: 0px 10px 17px 2px rgba(74, 68, 68, 0.25);
+  top: -4px;
+  border: 1px solid #cccccc;
+}
+
+/* Styling for the container holding cloud-related information */
+.clouds {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Styling for temperature display */
+.celsius {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--tempColor); /* Use a variable for temperature color */
+}
+
+/* Styling for the container holding the cloud icon */
+.cloud-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styling for the cloud icon image */
+.cloud-icon img {
+  width: 25%;
+}
+
+/* Styling for the weather description */
+.des {
+  text-transform: uppercase;
+  color: var(--subHeadingColor); /* Use a variable for subheading color */
+  font-size: 0.75rem;
+}
+
+/* Vertical line separating sections */
+.vl {
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid var(--hrColor); /* Use a variable for horizontal line color */
+}
+
+/* Styling for the container holding additional weather information */
+.more-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-right: 2rem;
+}
+
+/* Styling for paragraphs inside the more-info container */
+.more-info p {
+  font-weight: 600;
+}
+
+/* Styling for spans inside paragraphs in the more-info container */
+.more-info p > span {
+  color: var(--statsColor); /* Use a variable for statistics color */
+  font-size: 1.1rem;
+  font-weight: 500;
+}
