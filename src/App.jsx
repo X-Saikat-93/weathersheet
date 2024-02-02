@@ -23,7 +23,6 @@ function App() {
     return localStorage.getItem("language") || "en";
   });
   const [noData, setNoData] = useState();
-    const [backgroundSoundEnabled, setBackgroundSoundEnabled] = useState(true);
 
   const [loading, setLoading] = useState(false);
   const [isFahrenheitMode, setIsFahrenheitMode] = useState(false);
@@ -80,44 +79,43 @@ function App() {
  };
 
 
-   const getWeather = async (location) => {
-     setLoading(true);
-     setWeatherData([]);
-     let how_to_search =
-       typeof location === "string"
-         ? `q=${location}`
-         : `lat=${location[0]}&lon=${location[1]}`;
+  const getWeather = async (location) => {
+    setLoading(true);
+    setWeatherData([]);
+    let how_to_search =
+      typeof location === "string"
+        ? `q=${location}`
+        : `lat=${location[0]}&lon=${location[1]}`;
 
-     const url = "https://api.openweathermap.org/data/2.5/forecast?";
-     try {
-       let res = await fetch(
-         `${url}${how_to_search}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`
-       );
-       let data = await res.json();
-       if (data.cod !== "200") {
-         setNoData("Location Not Found");
-         setCity("Unknown Location");
-         setTimeout(() => {
-           setLoading(false);
-         }, 500);
-         return;
-       }
-       setWeatherData(data);
-       setTimeout(() => {
-         setLoading(false);
-       }, 500);
-       setCity(`${data.city.name}, ${data.city.country}`);
-       setWeatherIcon(
-         `${
-           "https://openweathermap.org/img/wn/" +
-           data.list[0].weather[0]["icon"]
-         }@4x.png`
-       );
-     } catch (error) {
-       setLoading(true);
-       console.log(error);
-     }
-   };
+    const url = "https://api.openweathermap.org/data/2.5/forecast?";
+    try {
+      let res = await fetch(
+        `${url}${how_to_search}&appid=${API_KEY}&units=metric&cnt=5&exclude=hourly,minutely`
+      );
+      let data = await res.json();
+      if (data.cod !== "200") {
+        setNoData("Location Not Found");
+        setCity("Unknown Location");
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
+        return;
+      }
+      setWeatherData(data);
+      setTimeout(() => {
+        setLoading(false);
+      }, 500);
+      setCity(`${data.city.name}, ${data.city.country}`);
+      setWeatherIcon(
+        `${
+          "https://openweathermap.org/img/wn/" + data.list[0].weather[0]["icon"]
+        }@4x.png`
+      );
+    } catch (error) {
+      setLoading(true);
+      // console.log(error);
+    }
+  };
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(myIP);
@@ -250,7 +248,8 @@ function App() {
                 <>
                   <DetailsCard
                     weather_icon={weatherIcon}
-                    data={weatherData}
+                        data={weatherData}
+                        
                 
                     isFahrenheitMode={isFahrenheitMode}
                     degreeSymbol={degreeSymbol}
