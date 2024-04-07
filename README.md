@@ -66,7 +66,7 @@ To run Weathersheet locally, follow these steps:
 
 ## 🌟 Credits
 
-Weathersheet is developed and maintained by [Your Full Name]. Weather data is sourced from the [OpenWeatherMap API](https://openweathermap.org/).
+Weathersheet is developed and maintained by Saikat Das. Weather data is sourced from the [OpenWeatherMap API](https://openweathermap.org/).
 
 ## 📧 Contacts
 
